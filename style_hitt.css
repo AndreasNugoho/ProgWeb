@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@600&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/back.jpg');
+    min-height: 100%;
+    object-fit: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+/* Atur Header */
+.header {
+    width: 100%;
+}
+.header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+.header ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+.header li{
+    display: inline-block;
+}
+.header a{
+    text-decoration: none;
+    color: black;
+    width: 110px;
+    display: block;
+    padding:10px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFFFF;
+    border-radius:20px;
+}
+/* Form Cari */
+.header .cari{
+    margin: -120px 7.5% 0 0 ;
+    float: right;
+    position:relative;
+}
+.cari{
+    margin:auto;
+    margin-top:20%;
+    position:relative;
+    width: 250px;
+    height: 42px;
+    border: 4px solid #2980b9;
+    padding:0px 10px;
+    border-radius: 50px;
+}
+.cariElemen{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.cariKolom{
+    border: none;
+    height: 110%;
+    width: 105%;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color:#424242;
+    font-weight: 500;
+    margin-left: -4.5%;
+}
+::placeholder{
+    padding: 0px 20px;
+}
+.cariKolom:focus{
+    outline: none;
+}
+
+/* WOrkout */
+.workout{
+    margin-left: 6%;
+    margin-right: 6%;
+    padding:10px;
+    border: 0px solid #ccc;
+    float: left;
+    color: #fff;
+    background-color:rgba(121, 121, 121, 0.4);
+
+
+}
+.gambar1{
+    padding:10px;
+    float: left;
+    width: 300px;
+    height: 300px;
+    object-position: 70% 0;
+    object-fit: cover; 
+    transition: 1s ease;
+}
+div.desc {
+    font-size: 17px;
+    padding: 15px;
+    text-align: left;
+    color:rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+
+}
+.desc table td{
+    padding: 20px;
+}
+/* Judul */
+content{
+    padding : 20px;
+}
+content div h3 {
+    font-size:20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align : center;
+    color: #fff;
+}
+/* video */
+div.video{
+    margin-left: 6.55%;
+    margin-right: 3.5%;
+    padding:20px;
+    border: 0px solid #ccc;
+    float: left;
+    width: 300px;
+}
+.video1{
+    width: 300px;
+    height: 170px;
+    object-position: 90% 0;
+    object-fit: none; 
+}
+.desc_video {
+    font-size: 20px;
+    padding:10px;
+    text-align: left;
+    color:rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(222, 222, 222,0.4);
+    color: white;
+    clear: both;
+    position: relative;
+    margin: -37px !important;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+
+
+}

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@600&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/back.jpg');
+    min-height: 100%;
+    object-fit: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+/* Atur Header */
+.header {
+    width: 100%;
+}
+.header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+.header ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+.header li{
+    display: inline-block;
+}
+.header a{
+    text-decoration: none;
+    color: black;
+    width: 110px;
+    display: block;
+    padding:10px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFFFF;
+    border-radius:20px;
+}
+/* Form Cari */
+.header .cari{
+    margin: -120px 7.5% 0 0 ;
+    float: right;
+    position:relative;
+}
+.cari{
+    margin:auto;
+    margin-top:20%;
+    position:relative;
+    width: 250px;
+    height: 42px;
+    border: 4px solid #2980b9;
+    padding:0px 10px;
+    border-radius: 50px;
+}
+.cariElemen{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.cariKolom{
+    border: none;
+    height: 110%;
+    width: 105%;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color:#424242;
+    font-weight: 500;
+    margin-left: -4.5%;
+}
+::placeholder{
+    padding: 0px 20px;
+}
+.cariKolom:focus{
+    outline: none;
+}
+/* Workout */
+.workout{
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding:10px;
+    border: 0px solid #ccc;
+    float: left;
+    width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.gambar4{
+    width: 300px;
+    height: 300px;
+    object-position: 70% 0;
+    object-fit: cover; 
+    transition: 1s ease;
+
+}
+.gambar4:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    transition: 1s ease;
+}
+.gambar5{
+    width: 300px;
+    height: 300px;
+    object-position: 50% 0;
+    object-fit: cover; 
+    transition: 1s ease;
+
+}
+.gambar5:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    transition: 1s ease;
+}
+.gambar6{
+    width: 300px;
+    height: 300px;
+    object-position: 50%;
+    object-fit: cover; 
+    transition: 1s ease;
+}
+.gambar6:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    transition: 1s ease;
+}
+.gambar7{
+    width: 300px;
+    height: 300px;
+    object-position: 50%;
+    object-fit: cover; 
+    transition: 1s ease;
+
+}
+.gambar7:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    transition: 1s ease;
+}
+content{
+    padding : 20px;
+}
+content div h3 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align : center;
+}
+div.desc {
+    font-size: 17px;
+    padding: 15px;
+    text-align: center;
+    color:grey;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(222, 222, 222,0.4);
+    color: white;
+    clear: both;
+    position: relative;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+
