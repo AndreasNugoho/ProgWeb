@@ -16,6 +16,7 @@
         <div class="header">
             <img src="img/header-baru-01.png" alt="">
                 <ul>
+                    <li><a href="login.php">LOGIN</a></li>
                     <li><a href="workout.html">WORKOUT</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                 </ul>
