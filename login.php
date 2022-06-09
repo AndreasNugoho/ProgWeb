@@ -1,10 +1,10 @@
 <?php
-    // session_start();
+        session_start();
 
-    // if( isset($_SESSION["login"]) ) {
-    //     header("Location: index.php");
-    //     exit;
-    // }
+    if( isset($_SESSION["login"]) ) {
+        header("Location: index.php");
+        exit;
+    }
 
     require 'func/func.php';
 
@@ -13,7 +13,6 @@
 
         $email = $_POST["email"];
         $password = $_POST["password"];
-        var_dump($password);
         $result = mysqli_query($conn, "SELECT * FROM akun WHERE email = '$email'");
     
         // cek username
@@ -22,16 +21,15 @@
             // cek password
             $row = mysqli_fetch_assoc($result);
             var_dump($row);
-            if($password == $row['password']) {
-            //     // set session
-            //     // $_SESSION["login"] = true;
-            //     echo"tes";
+            if (password_verify($password,$row['password'])){
+                $_SESSION["login"] = true;
                 header("Location: index.php");
-            //     exit;
+                exit;
+            }else{
+                $error = true;
             }
         }
     
-        // $error = true;
     
     }
 
@@ -51,9 +49,9 @@
         LOGIN AKUN
     </h1>
     <h3><a href="register.php">Daftar Akun</a></h3>
-    <!-- <?php if( isset($error) ) : ?>
+    <?php if( isset($error) ) : ?>
 	    <p style="color: red; font-style: italic;">username / password salah</p>
-    <?php endif; ?> -->
+    <?php endif; ?>
     <form action="" method="POST" >
         <label for="username" class="form-label">Email </label><br>
         <input type="email" name="email" id="email" class="form-control" placeholder="Email" required><br>

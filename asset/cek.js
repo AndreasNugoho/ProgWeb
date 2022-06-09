@@ -39,3 +39,7 @@ function validPassword() {
     }
   }
 }
+function cek() {
+  alert("anjayy")
+}
+

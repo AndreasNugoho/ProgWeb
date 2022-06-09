@@ -36,10 +36,12 @@
         //           </script>";
         //     return false;
         // }
-    
+
+        $options = [ "cost" =>15 ];
         // enkripsi password
         $password = password_hash($password, PASSWORD_DEFAULT);
-    
+        
+
         // tambahkan userbaru ke database
         mysqli_query($conn, "INSERT INTO akun VALUES('', '$namaDepan','$namaBelakang','$email','$password')");
     

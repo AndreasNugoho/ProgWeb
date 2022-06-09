@@ -136,6 +136,12 @@ h3 {
     text-align : center;
     color:rgb(255, 255, 255);
 }
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align : center;
+    color:rgb(255, 255, 255);
+}
 div.desc {
     font-size: 17px;
     padding: 15px;

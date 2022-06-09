@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'func/func.php';
     $result = mysqli_query($conn, 'SELECT * FROM olahraga');
 ?>
@@ -10,15 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koh Fitness</title>
     <link rel="stylesheet" href="style.css">
+    <script href="asset/cek.js"></script>
 </head>
 <body>
     <header>
         <div class="header">
             <img src="img/header-baru-01.png" alt="">
                 <ul>
-                    <li><a href="login.php">LOGIN</a></li>
+                    
                     <li><a href="workout.html">WORKOUT</a></li>
                     <li><a href="about.html">ABOUT</a></li>
+                    <?php if (isset($_SESSION['login'])):?>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    <?php else:?>
+                        <li><a href="login.php">LOGIN</a></li>
+                    <?php endif;?>
+
                 </ul>
                 <div class="cari">
                     <table class="cariElemen">
@@ -56,20 +64,33 @@
     <content>
         <div>
         <h3>WORKOUT</h3>
+        <?php if (isset($_SESSION['login'])):?>
+            <?php $i = 1;?>
+            <?php foreach ($result as $row):?>
+                <div class="workout">
+                    <a href="detail.php?id=<?= $row["id_olahraga"];?>">
+                    <img alt="1" src="admin/img_upload/<?= $row["gambar"]; ?>" class="gambar3"/>
+                    <div class="desc"><?= $row['nama_olahraga'];?></div>
+                </div>
+            <?php $i++;?>
+            <?php endforeach;?>
+        <?php endif;?>
 
-        <?php $i = 1;?>
-        <?php foreach ($result as $row):?>
-            <div class="workout">
-                <a href="detail.php?id=<?= $row["id_olahraga"];?>">
-                <img alt="1" src="admin/img_upload/<?= $row["gambar"]; ?>" class="gambar3"/>
-                <div class="desc"><?= $row['nama_olahraga'];?></div>
-            </div>
-        <?php $i++;?>
-        <?php endforeach;?>
+
     </content>
-            <div class="more"> 
-                <a href="workout.html">MORE WORKOUT </a>
+            <div class="more">
+                <?php if (isset($_SESSION['login'])):?>
+                    <a href="workout.php">MORE WORKOUT </a>
+                <?php else:?>
+                    <a href="login.php" onclick="cek()">MORE WORKOUT </a>
+
+                <?php endif;?>
             </div>
+            <script>
+                function cek() {
+                    alert("anda harus login!");
+                }
+            </script>
     <footer>
         <a href="https://www.instagram.com/_khutut/" target="_blank">©2022 Koh Group Inc.</a>
     </footer>
