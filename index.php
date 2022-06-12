@@ -28,14 +28,12 @@
                     <?php endif;?>
 
                 </ul>
-                <div class="cari">
-                    <table class="cariElemen">
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="search" class="cariKolom"> 
-                            </td>
-                        </tr>
-                    </table>
+                <div>
+                    <?php if (isset($_SESSION['login'])):?>
+                                <input type="text" name="keyword" size="40" autofocus placeholder="Search" autocomplete="off" id="keyword">
+	                            <button type="submit" name="cari" id="tombol-cari">Cari</button>
+                    <?php else:?>
+                    <?php endif;?>
                 </div>
         </div>
         <h3>
@@ -64,17 +62,19 @@
     <content>
         <div>
         <h3>WORKOUT</h3>
-        <?php if (isset($_SESSION['login'])):?>
-            <?php $i = 1;?>
-            <?php foreach ($result as $row):?>
-                <div class="workout">
-                    <a href="detail.php?id=<?= $row["id_olahraga"];?>">
-                    <img alt="1" src="admin/img_upload/<?= $row["gambar"]; ?>" class="gambar3"/>
-                    <div class="desc"><?= $row['nama_olahraga'];?></div>
-                </div>
-            <?php $i++;?>
-            <?php endforeach;?>
-        <?php endif;?>
+        <div id="container">
+            <?php if (isset($_SESSION['login'])):?>
+                <?php $i = 1;?>
+                <?php foreach ($result as $row):?>
+                    <div class="workout">
+                        <a href="detail.php?id=<?= $row["id_olahraga"];?>">
+                        <img alt="1" src="admin/img_upload/<?= $row["gambar"]; ?>" class="gambar3"/>
+                        <div class="desc"><?= $row['nama_olahraga'];?></div>
+                    </div>
+                <?php $i++;?>
+                <?php endforeach;?>
+            <?php endif;?>
+        </div>
 
 
     </content>
@@ -91,6 +91,7 @@
                     alert("anda harus login!");
                 }
             </script>
+            <script src="asset/cari.js"></script>
     <footer>
         <a href="https://www.instagram.com/_khutut/" target="_blank">©2022 Koh Group Inc.</a>
     </footer>

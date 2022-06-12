@@ -35,7 +35,6 @@
     
             // cek password
             $row = mysqli_fetch_assoc($result);
-            var_dump($row);
             if (password_verify($password,$row['password'])){
                 $_SESSION["login"] = true;
 
