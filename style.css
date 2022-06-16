@@ -175,7 +175,7 @@ div.berita{
     object-position: 50% 0;
     object-fit: cover; 
     transition: 1s ease;
-    
+
 }
 .gambar5:hover{
     -webkit-transform: scale(0.8);

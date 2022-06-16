@@ -1,0 +1,289 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Fraunces:ital,wght@0,500;0,600;0,700;1,600&display=swap");
+
+
+
+html, body {
+    margin: 0;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      background-color: #ffffff;
+
+    }
+  .video-sec-wrap {
+      width: 100%;
+      min-height: 100vh;
+
+  }
+  .video-sec {
+      width: 85%;
+      margin: 3em auto;
+      text-align: left;
+
+  }
+  .video-sec-middle {
+      grid-template-columns: repeat(5,1fr);
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-rows: auto;
+      grid-row-gap: 15px;
+      grid-column-gap: 10px;
+      padding: 20px 0;
+
+  }
+  .video-sec-middle #container {
+    display:block;
+}
+  .thumb-wrap {
+      display: inline;
+      cursor: pointer;
+  }
+  .thumb {
+      display: block;
+      margin: .4em;
+      width: 100%;
+      height: 200px;
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      opacity: 1;
+      transition: all .2s ease-in-out;
+      object-fit: cover; 
+  }
+  .thumb:hover {
+      opacity: .8;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .5);
+  }
+  .thumb-info {
+      display: inline-block;
+      height: 20%;
+      width: 100%;
+      padding: .4em;
+  }
+  .thumb-title {
+      color: #3e3e3e;
+      margin: 0;
+      font-size: 1.2em;
+  }
+  .thumb-user {
+      color: #7e7e7e;
+      display: block;
+      margin: 0;
+      font-size: .9em;
+  }
+  .thumb-text {
+      color: #7e7e7e;
+      display: inline-block;
+      margin: 0;
+      font-size: .8em;
+  }
+  .video-sec-title {
+      font-weight: bolder;
+      font-size: 1.4em;
+      color: #f5f5f5;
+      margin: 5px 0 10px 10px;
+  }
+  .video-showmore {
+      font-weight: bold;
+      font-variant: all-petite-caps;
+      display: block;
+      color: #7e7e7e;
+      padding: 10px;
+      font-size: 1.2em;
+      text-align: center;
+  }
+  @media only screen and (max-width: 1456px) {
+      .video-sec-middle {
+          grid-template-columns: repeat(4,1fr);
+      }
+  }
+  @media only screen and (max-width: 1024px) {
+      .video-sec-middle {
+        grid-template-columns: repeat(3,1fr);
+      }
+  }
+  @media only screen and (max-width: 756px) {
+    .video-sec-middle {
+     grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media only screen and (max-width: 496px) {
+    .video-sec-middle {
+     grid-template-columns: repeat(1,1fr);
+    }
+  }
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #f8f3eb;
+    color: #484847;
+    padding-bottom: 5rem;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .responsive-wrap {
+    width: 95%;
+    max-width: 1900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+  .header-middle {
+    display: none;
+  }
+  @media (min-width: 1200px) {
+    .header-middle {
+      display: block;
+    }
+  }  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-nav {
+    display: none;
+  }
+  @media (min-width: 1200px) {
+    .header-nav {
+      display: block;
+    }
+  }
+  
+  .header-link {
+    color: #000;
+    text-decoration: none;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    display: none;
+    font-weight: 500;
+    display: inline-block;
+  }
+  .header-link--button {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+  }
+  .header-menu-button {
+    margin-left: 0.75rem;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    font: inherit;
+    position: relative;
+    padding-right: 30px;
+    font-weight: 500;
+  }
+  .header-menu-button:after, .header-menu-button:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: currentcolor;
+    right: 0;
+    top: 8px;
+  }
+  .header-menu-button:after {
+    top: 16px;
+    width: 12px;
+    right: 8px;
+  }
+  .judul {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .judul h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    position: relative;
+  }
+  .judul h1:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: -3px;
+    height: 2px;
+    background-color: currentcolor;
+  }
+
+  .footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+
+  .cari-container {
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-left: 10%;
+}
+
+
+.cari-input {
+    width: 100%;
+    padding: 12px 30px;
+
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #575756;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #575756;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.cari-input::placeholder {
+        color: rgba(87, 87, 86, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+.cari-input:hover,
+    .cari-input:focus {
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #575756;
+        border-radius: 0;
+        background-position: 100% center;
+    }
+  

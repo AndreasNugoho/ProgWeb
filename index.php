@@ -10,90 +10,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koh Fitness</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_coba.css">
     <script href="asset/cek.js"></script>
+    <script src="asset/cari.js"></script>
+
+
 </head>
 <body>
-    <header>
-        <div class="header">
-            <img src="img/header-baru-01.png" alt="">
-                <ul>
-                    
-                    <li><a href="workout.html">WORKOUT</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <?php if (isset($_SESSION['login'])):?>
-                        <li><a href="logout.php">LOGOUT</a></li>
-                    <?php else:?>
-                        <li><a href="login.php">LOGIN</a></li>
-                    <?php endif;?>
+    <header class="header responsive-wrapper">
+        <div class="header-left">
+            <img src="img/desain mini proj-01.png" alt="" srcset="" width="270px" height="50%">	
+        </div>
+        <div class="header-middle">
 
-                </ul>
-                <div>
-                    <?php if (isset($_SESSION['login'])):?>
-                                <input type="text" name="keyword" size="40" autofocus placeholder="Search" autocomplete="off" id="keyword">
-	                            <button type="submit" name="cari" id="tombol-cari">Cari</button>
-                    <?php else:?>
-                    <?php endif;?>
-                </div>
         </div>
-        <h3>
-            NEWS
-        </h3>
-        <div class="berita">
-            <a href="https://health.detik.com/kebugaran/d-5909387/ingin-cantik-sampai-tua-catat-saran-sehat-anindita-hidayat" target="_blank">
-                <img src="https://akcdn.detik.net.id/community/media/visual/2022/01/21/anindita-hidayat-7_169.jpeg?w=700&q=90" alt="foto_anin" class="gambar1">
-            </a>
-            <div class="desc">Ingin Cantik Sampai Tua? Catat Saran Sehat Anindita Hidayat</div>
-        </div>
-        <div class="berita">
-            <a href="https://health.detik.com/kebugaran/d-5895442/weight-training-manfaat-dan-cara-melakukan-latihan-beban-yang-efektif" target="_blank">
-                <img src="https://akcdn.detik.net.id/community/media/visual/2021/10/05/tempat-gym-kembali-beroperasi-1_169.jpeg?w=700&q=90" alt="Cinque Terre" class="gambar2">
-            </a>
-            <div class="desc">Weight Training: Manfaat dan Cara Melakukan Latihan Beban</div>
-        </div>
-        <div class="berita">
-            <a href="https://www.viva.co.id/bola/liga-indonesia/1462455-persija-esports-resmi-didirikan-dengan-pembentukan-tim-valorant" target="_blank">
-                <img src="https://thumb.viva.co.id/media/frontend/thumbs3/2022/03/31/6245029d4fb51-persija-esports-tim-valorant_1265_711.jpg" alt="Cinque Terre" class="gambar3">
-            </a>
-            <div class="desc">Persija Esports Resmi Didirikan dengan Pembentukan Tim Valorant</div>
-        </div>
-
-    </header>
-    <content>
-        <div>
-        <h3>WORKOUT</h3>
-        <div id="container">
-            <?php if (isset($_SESSION['login'])):?>
-                <?php $i = 1;?>
-                <?php foreach ($result as $row):?>
-                    <div class="workout">
-                        <a href="detail.php?id=<?= $row["id_olahraga"];?>">
-                        <img alt="1" src="admin/img_upload/<?= $row["gambar"]; ?>" class="gambar3"/>
-                        <div class="desc"><?= $row['nama_olahraga'];?></div>
-                    </div>
-                <?php $i++;?>
-                <?php endforeach;?>
-            <?php endif;?>
-        </div>
-
-
-    </content>
-            <div class="more">
+        <div class="header-right">
+            <nav class="header-nav">
+                <a href="index.php" class="header-link">Home</a>
+                <a href="about.php" class="header-link">About</a>
                 <?php if (isset($_SESSION['login'])):?>
-                    <a href="workout.php">MORE WORKOUT </a>
+                    <a href="logout.php" class="header-link header-link--button">Logout</a>
                 <?php else:?>
-                    <a href="login.php" onclick="cek()">MORE WORKOUT </a>
-
+                    <a href="login.php" class="header-link header-link--button">Login</a>
                 <?php endif;?>
-            </div>
+            </nav>
+            
+        </div>
+            <div class="cari-container">
+                <input class="cari-input" type="text" placeholder="Search" id="keyword">
+            </div>            
+    </header>
+        <main class="responsive-wrap">
+        <div class="judul">
+            <h1>Workout</h1>
+        </div>
+        <article class="video-sec-wrap">
+			<div class="video-sec">
+				<ul class="video-sec-middle" id="vid-grid">
+
+                    <?php $i = 1;?>
+                    <?php foreach ($result as $row):?>
+
+                        <li class="thumb-wrap"><a href="detail.php?id=<?= $row["id_olahraga"];?>">
+						<img class="thumb" src="admin/img_upload/<?= $row["gambar"]; ?>" alt="">
+						<div class="thumb-info">
+							<p class="thumb-title"><?= strtoupper($row["nama_olahraga"]); ?></p>
+                            <p class="thumb-user"><?= $row["kesulitan"]; ?></p>
+						</div>
+					    </a></li>
+                    <?php $i++;?>
+                    <?php endforeach;?>
+
+				</ul>
+                    <!-- <a href="workout.php" class="video-showmore">MORE WORKOUT </a> -->
+                </div>
+		</article>
+        
+
+        </div>
+    </content>
             <script>
                 function cek() {
                     alert("anda harus login!");
                 }
             </script>
+            <!-- <script href="asset/script.js"></script> -->
             <script src="asset/cari.js"></script>
-    <footer>
+
+
+
+    <!-- <footer>
         <a href="https://www.instagram.com/_khutut/" target="_blank">©2022 Koh Group Inc.</a>
-    </footer>
+    </footer> -->
+
+
 </body>
 </html>

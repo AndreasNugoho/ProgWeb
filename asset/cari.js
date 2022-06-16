@@ -1,6 +1,5 @@
 var keywoard = document.getElementById('keyword');
-var tombolCari = document.getElementById('tombol-cari');
-var wadah = document.getElementById('container');
+var wadah = document.getElementById('vid-grid');
 
 keyword.addEventListener('keyup',function(){
     var xhr = new XMLHttpRequest();
