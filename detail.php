@@ -36,83 +36,75 @@
         </div>
     </header>
     <content>
-    
-        <main class="responsive-wrap">
+    <main class="responsive-wrap">
             <div class="judul">
-                <h1><?= $result["nama_olahraga"]; ?></h1>
+                <h1>WORKOUT</h1>
             </div>
-        <div>
-            <!-- <div class="workout">
-                <a href="hitt.html">
-                    <img src="admin/img_upload/<?= $result["gambar"]; ?>" alt="Cinque Terre" class="gambar1" >
-                </a>
-            <div class="desc">
-                <table>
-                    <tr>
-                        <td><b>Deskripsi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></td>
-                        <td><?= $result["deskripsi"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td><b>Nama Instruktur&nbsp;&nbsp;:</b></td>
-                        <td><?= $result["nama_instruktur"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td><b>Level Olahraga&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></td>
-                        <td><?= $result["kesulitan"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td><b>Peralatan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b></td>
-                        <td><?= $result["peralatan"]; ?></td>
-                    </tr>
-                </table>
+    <article class="post">
+    <div>
+        <div class="absolute-bg" style="background-image: url('admin/img_upload/<?= $result["gambar"]; ?>');"></div>
+    </div>
+    <div class="post-container">
+        
+        <div class="post-konten">
+        <header>
+            <time class="post-kesulitan"><?= $result["kesulitan"]; ?></time>
+            <h1 class="post-nama"><?= $result["nama_olahraga"]; ?></h1>
+        </header>
+        <p class="post-text">Required: <?= $result["peralatan"];?></p>
+        <p class="post-text"><?= $result["deskripsi"]; ?></p>
+                <div class="article-author">
+                    <div class="article-author-img">
+                        <img src="https://assets.codepen.io/285131/author-3.png" />
+                    </div>
+                    <div class="article-author-info">
+                        <dl>
+                            <dt><?= $result["nama_instruktur"]?></dt>
+                            <dt>Instruktur</dt>
+                        </dl>
+                    </div>
                 </div>
             </div>
-            <main class="responsive-wrap">
-            <div class="judul">
-                <h1>Video</h1>
-            </div>
-            <div>
+    </div>
+    </article>
+    <div class="judul">
+        <h1>VIDEO</h1>
+    </div>
 
-            <?php
-                $i = 0;
-                $video = $result['video'];
-                $pecah = explode(",", $video);
+        <?php
             ?>
             <?php if (isset($_SESSION['login'])):?>
-                belum
+                <main class="responsive-wrap">
+                <article class="video-sec-wrap">
+                    <div class="video-sec">
+                        <ul class="video-sec-middle" id="vid-grid">
+                            <?php 
+                            $i = 0;
+                            $video = $result['video'];
+                            $pecah = explode(",", $video);
+                            foreach ($pecah as $cek):
+                            $cek =  explode(",", $video);?>
+
+                                <li class="thumb-wrap">
+                                <iframe src="<?php echo $cek[$i]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                <div class="thumb-info">
+                                    <!-- <p class="thumb-title"><?= strtoupper($row["nama_olahraga"]); ?></p> -->
+                                    <p class="thumb-user"><?php echo $result["nama_olahraga"]." - ".$i;?></p>
+                                </div>
+                                </li>
+                            <?php $i++;?>
+                            <?php endforeach;?>
+
+                        </ul>
+                        </div>
+                </article>
+                </main>
             <?php else:?>
-                <?php foreach ($pecah as $cek):
-                $cek =  explode(",", $video);?>
-                <div class="video">
-                    <iframe src="<?php echo $cek[$i]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="desc_video"><?php echo $result["nama_olahraga"]." - ".$i; ?></div>
+                <div class="judul-det">
+                    <h1>ANDA BELUM LOGIN!!!</h1>
                 </div>
-                <?php    
-                $i++;
-                endforeach;?>
             <?php endif;?>
 
-        </div> -->
-        <article class="post">
-        <div>
-            <div class="absolute-bg" style="background-image: url('admin/img_upload/<?= $result["gambar"]; ?>');"></div>
-        </div>
-        <div class="post__container">
-            <span class="post__category">Koh Fitness</span>
-            
-            <div class="post__content">
-            <header>
-                <time class="post__time"><?= $result["kesulitan"]; ?></time>
-                <h1 class="post__header"><span>Visiting</span> <span>the</span> <span>beach</span></h1>
-            </header>
-            
-            <p class="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim.</p>
-            </div>
-            <div class="post__link">
-            <a href="#">Older Posts</a>
-            </div>
-        </div>
-        </article>
+    </main>
     </content>
 
 
